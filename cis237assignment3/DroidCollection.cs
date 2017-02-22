@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Evan Schober
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,10 +9,6 @@ namespace cis237assignment3
 {
     static class DroidCollection
     {
-        //Variables
-
-        //Constructors
-
         //Protocol contstructor
         public static void Add(string Material, string Model, string Color, int NumberOfLanguages, Droid[] DroidInventory)
         {

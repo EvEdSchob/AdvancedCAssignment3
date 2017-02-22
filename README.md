@@ -3,7 +3,7 @@
 
 ## Author
 
-
+Evan Schober
 
 ## Description
 
@@ -115,6 +115,8 @@ It may be beneficial for you to create extra methods within the droid sub classe
 
 ## Outside Resources Used
 
-
+StackOverflow Math.Round
 
 ## Known Problems, Issues, And/Or Errors in the Program
+
+Does not verify that the droid's information is correct after input but before adding it to the array.

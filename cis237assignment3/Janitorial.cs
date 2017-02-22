@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Evan Schober
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,16 +12,6 @@ namespace cis237assignment3
         //Variables
         private bool _trashCompactor;
         private bool _vacuum;
-        private decimal modelCost;
-        private decimal baseCost;
-        private decimal totalCost;
-
-        //Properties
-        decimal IDroid.TotalCost
-        {
-            get { return totalCost; }
-            set { totalCost = value; }
-        }
 
         //Constructors
         public Janitorial(string Material, string Model, string Color, bool ToolBox, bool ComputerConnection, bool Arm, bool TrashCompactor, bool Vacuum) 
@@ -29,12 +20,33 @@ namespace cis237assignment3
         {
             _trashCompactor = TrashCompactor;
             _vacuum = Vacuum;
+            base.CalculateTotalCost();
             CalculateTotalCost();
         }
 
+        //Public Methods
         public override void CalculateTotalCost()
         {
-            totalCost = baseCost + 50;
+            if (_trashCompactor)
+                TotalCost += 250;
+            if (_vacuum)
+                TotalCost += 50;
         }
+
+        public override string ToString()
+        {
+            string returnString = "";
+            returnString += base.ToString() + ",";
+            if(_trashCompactor)
+            {
+                returnString += " Has a trash compactor,";
+            }
+            if(_vacuum)
+            {
+                returnString += " Is equipped with a vacuum";
+            }
+            return returnString;
+        }
+
     }
 }

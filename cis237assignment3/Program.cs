@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Evan Schober
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,7 +23,7 @@ namespace cis237assignment3
             "*******           Droid Inventory Management         *******" + Environment.NewLine +
             "************************************************************" + Environment.NewLine);
 
-            int choice = ui.UserInput();
+            int choice = ui.MainMenu();
 
             while (choice != 3)
             {
@@ -31,22 +32,21 @@ namespace cis237assignment3
                     case 1:
                         //Output the full list of available droids.
                         ui.Output(DroidCollection.GetPrintString(DroidInventory));
-                        choice = ui.UserInput();
+                        choice = ui.MainMenu();
                         break;
                     case 2:
                         //Add item to DroidInventory
                         ui.AddItem(DroidInventory);
-                        choice = ui.UserInput();
+                        choice = ui.MainMenu();
                         break;
                     default:
-                        //Output the error if there is a numerical input that is not 1-5
+                        //Output the error if there is a numerical input that is not 1-3
                         ui.Output("Error: Please enter valid numeric entry (1-3)");
-                        choice = ui.UserInput();
+                        choice = ui.MainMenu();
                         break;
-
                 }
             }
-            //If UI input = 5 display farewell and close the program
+            //If UI input = 3 display farewell and close the program
             ui.Output("Goodbye!");
         }
     }
